@@ -1,0 +1,7 @@
+{
+    "template": "index",
+    "name": "news",
+    "data": {
+        "foo": "Hello World"
+    }
+}
