@@ -1,7 +1,12 @@
 {
-    "template": "index",
+    "template": {
+        "list": "project/news",
+        "detail": "project/detail"
+    },
     "name": "news",
-    "data": {
-        "foo": "Hello World"
-    }
+    "data": [{
+        "title": "test1"
+    }, {
+        "title": "test2"
+    }]
 }
