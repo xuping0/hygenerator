@@ -1,4 +1,4 @@
 hygenerator
 ===========
 
-Generator the html for hybird app
+Generate the html for hybird app
