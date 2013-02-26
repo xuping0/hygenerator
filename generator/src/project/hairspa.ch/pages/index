@@ -1,5 +1,5 @@
 {
-    "template": "project/index",
+    "template": "index",
     "name": "index",
     "data": {
         "foo": "Hello World"
