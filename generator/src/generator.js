@@ -27,7 +27,7 @@ function initProjects(path, output) {
         var dirList = fs.readdirSync(folder);
         dirList.forEach(function(item) {
             if (fs.statSync(folder + '/' + item).isDirectory()) {
-                findPages(folder + '/' + item);
+                findPages(folder + '/' + item, pages);
             } else {
                 pages.push(folder + '/' + item);
             }
@@ -77,28 +77,28 @@ function generateBasicHTML(path, pageConfig, projectConfig) {
     generateHTML(newdir + '/' + pageConfig.name + '.html', template, pageConfig.data);
 }
 
-function generateCascadeHTML(path, config) {
+function generateCascadeHTML(path, pageConfig, projectConfig) {
     // generate the id for each item
     var idx = 0;
-    config.data.forEach(function(item) {
+    pageConfig.data.forEach(function(item) {
         item.id = ++idx;
     });
     // generate the list page
     generateBasicHTML(path, {
-        template: config.template.list,
-        name: config.name,
+        template: pageConfig.template.list,
+        name: pageConfig.name,
         data: {
-            name: config.name,
-            items: config.data
+            name: pageConfig.name,
+            items: pageConfig.data
         }
-    });
+    }, projectConfig);
     // generate the detail page
-    config.data.forEach(function(item) {
+    pageConfig.data.forEach(function(item) {
         generateBasicHTML(path, {
-            template: config.template.detail,
-            name: config.name + item.id,
+            template: pageConfig.template.detail,
+            name: pageConfig.name + item.id,
             data: item
-        });
+        }, projectConfig);
     });
 }
 
@@ -114,9 +114,9 @@ function generateProject(project) {
 
         if (typeof pageConfig.template === "string") {
             generateBasicHTML(page, pageConfig, project);
-        } else if (typeof config.template === "object") {
+        } else if (typeof pageConfig.template === "object") {
             if (pageConfig.template.list && pageConfig.template.detail) {
-                generateCascadeHTML(pageConfig, project);
+                generateCascadeHTML(page, pageConfig, project);
             }
         }
     });
