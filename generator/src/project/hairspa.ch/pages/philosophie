@@ -1,0 +1,25 @@
+{
+    "template": "tabitem",
+    "name": "philosophie",
+    "data": {
+        "back": {
+            "link": "index.html",
+            "label": "Back"
+        },
+        "title": "Home",
+        "tabs" : [{
+            "link": "philosophie.html",
+            "label": "Philosophies",
+            "selected": true
+        }, {
+            "link": "gallery.html",
+            "label": "Gallery"
+        }, {
+            "link": "hairdresser.html",
+            "label": "Hairdressers"
+        }]
+    },
+    "extendGlobal": {
+        "selectedMenu": 0
+    }
+}

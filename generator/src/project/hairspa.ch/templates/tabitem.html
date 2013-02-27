@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{=it.global.lang}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="version" content="{{=it.global.version}}">
+    <link rel="apple-touch-startup-image" href="startup.png">
+    <link rel="apple-touch-icon" href="app-icon.png"/>
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>{{=it.global.project}} - {{=it.title}}</title>
+    <link rel="stylesheet" href="./chui/chui.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="./chui/zepto.js"></script>
+    <script src="./chui/chui.js"></script>
+    <script src="./chui/iscroll.js"></script>
+    <script src="./js/base.js"></script>
+</head>
+<body>
+<app>
+    <view id="main" ui-background-style="striped" ui-navigation-status="current">
+    <navbar>
+        <uibutton id="back" ui-icon-align="left" ui-bar-align="left" href="{{=it.back.link}}">
+            <icon style="-webkit-mask-image: url(icons/back.png)"></icon>
+            <label>{{=it.back.label}}</label>
+        </uibutton>
+        <h1>{{=it.title}}</h1>
+    </navbar>
+    <subview ui-associations="withNavBar">
+        <scrollpanel>
+        <shim></shim> 
+        <stack> 
+            <segmentedcontrol>
+{{~ it.tabs : tab }}
+            <uibutton class="{{? tab.selected == true}}selected{{?}}" href="{{=tab.link}}"> <label>{{=tab.label}}</label></uibutton>
+{{~}}
+            </segmentedcontrol>
+        </stack>
+        <div style="height: 20px;"></div>
+        <div class="appcontainer">
+        <tableview ui-tablecell-order="centered">
+            <tablecell class="ui-no-hover">
+                <celldetail>
+                <image src="images/s1.png" width="100%">
+                Das Hairspa von Nadine Rebmann ist die erste Adresse in Zürich für die besondere Tiefenpflege von Haar und Kopfhaut. Bei uns steht neben dem perfekten Haarschnitt und Farbe, im Besonderen auch die Entspannung im Vordergrund. Die Behandlungsdauer wird individuell auf das Bedürfnis des Kunden abgestimmt und beträgt zwischen 30 und 90 Minuten. Egal ob sanftes Haarbad, vitalisierende Maske oder wirkungsvolle Kopfhautmassage - ein idealer Ort, um für einige Zeit dem hektischen Alltag zu entfliehen und sich verwöhnen zu lassen.
+                </celldetail>
+            </tablecell>
+        </tableview>
+        </div>
+        <shim></shim> 
+        </scrollpanel>
+    </subview>
+    <tabbar ui-selected-tab="{{=it.global.selectedMenu}}">
+{{~ it.global.menus :menu:i }}
+     <uibutton implements="tab" href="{{=menu.link}}">
+         <icon style="-webkit-mask-box-image: url(icons/{{=menu.image}});" class="{{? i == it.global.selectedMenu}}selected{{?}}"></icon>
+         <label>{{=menu.label}}</label>
+     </uibutton>
+{{~}}
+    </tabbar>
+    </view>
+</app>
+</body>
+</html>

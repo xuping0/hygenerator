@@ -2,6 +2,9 @@
     "template": "index",
     "name": "index",
     "data": {
-        "foo": "Hello World"
+        "title": "Home"
+    },
+    "extendGlobal": {
+        "selectedMenu": 0
     }
 }

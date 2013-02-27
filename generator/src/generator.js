@@ -1,6 +1,11 @@
 var fs = require("fs");
 var doT = require("dot");
 var fs = require('fs');
+var extend = require("node.extend");
+
+
+// modify the default setting
+doT.templateSettings.strip = false;
 
 var GLOABAL = {
     PROJECT: "project",
@@ -73,7 +78,9 @@ function generateBasicHTML(path, pageConfig, projectConfig) {
     var template = fs.readFileSync(projectConfig.templates + '/' + pageConfig.template + '.html').toString();
 
     // gennerate the html with the speicfic data
+    projectConfig.global.version = (new Date()).getTime();
     pageConfig.data.global = projectConfig.global;
+    extend(projectConfig.global, pageConfig.extendGlobal);
     generateHTML(newdir + '/' + pageConfig.name + '.html', template, pageConfig.data);
 }
 

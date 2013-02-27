@@ -1,5 +1,26 @@
 {
-    "menus": [
-        "index", "male"
-    ]
+    "project": "Hairspa",
+    "lang": "de",
+    "menus": [{
+        "label": "Home",
+        "image": "home.png",
+        "link": "index.html"
+    }, {
+        "label": "Services",
+        "image": "service.png",
+        "link": "service.html"
+    }, {
+        "label": "Buchen",
+        "image": "book.png",
+        "link": "book.html"
+    }, {
+        "label": "Contact",
+        "image": "contact.png",
+        "link": "contact.html"
+    }, {
+        "label": "Mehr",
+        "image": "more.png",
+        "link": "more.html"
+    }],
+    "selectedMenu": 0
 }
