@@ -20,7 +20,7 @@
 <app>
     <view id="main" ui-background-style="striped" ui-navigation-status="current">
     <navbar>
-        <uibutton id="back" ui-icon-align="left" ui-bar-align="left" href="{{=it.back.link}}">
+        <uibutton id="back" ui-icon-align="left" ui-bar-align="left" href="{{=it.parentConfig.name}}.html">
             <icon style="-webkit-mask-image: url(icons/back.png)"></icon>
             <label>{{=it.back.label}}</label>
         </uibutton>
@@ -29,25 +29,28 @@
     <subview ui-associations="withNavBar">
         <scrollpanel>
         <shim></shim> 
-        <stack> 
-            <segmentedcontrol>
-{{~ it.tabs : tab }}
-            <uibutton class="{{? tab.selected == true}}selected{{?}}" href="{{=tab.link}}"> <label>{{=tab.label}}</label></uibutton>
-{{~}}
-            </segmentedcontrol>
-        </stack>
-        <div style="height: 20px;"></div>
         <div class="appcontainer">
         <tableview ui-tablecell-order="centered">
             <tablecell class="ui-no-hover">
                 <celldetail>
-                <image src="images/s1.png" width="100%">
-                Das Hairspa von Nadine Rebmann ist die erste Adresse in Zürich für die besondere Tiefenpflege von Haar und Kopfhaut. Bei uns steht neben dem perfekten Haarschnitt und Farbe, im Besonderen auch die Entspannung im Vordergrund. Die Behandlungsdauer wird individuell auf das Bedürfnis des Kunden abgestimmt und beträgt zwischen 30 und 90 Minuten. Egal ob sanftes Haarbad, vitalisierende Maske oder wirkungsvolle Kopfhautmassage - ein idealer Ort, um für einige Zeit dem hektischen Alltag zu entfliehen und sich verwöhnen zu lassen.
+                <h3>{{=it.cascadeObj.name}}</h3>
+                <table width="100%">
+                <tr>
+                <td width="40%"><image src="{{=it.cascadeObj.photo}}" height="150px"></td>
+                <td  valign="center">
+                <uibutton>
+                    <icon style="-webkit-mask-image: url(icons/book.png);"></icon>
+                    <label>Book Now!</label>
+                </uibutton>
+                </td>
+                </tr>
+                </table>
+                <p>{{=it.cascadeObj.description}}</p>
                 </celldetail>
             </tablecell>
         </tableview>
         </div>
-        <shim></shim> 
+        <shim></shim>
         </scrollpanel>
     </subview>
     <tabbar ui-selected-tab="{{=it.global.selectedMenu}}">

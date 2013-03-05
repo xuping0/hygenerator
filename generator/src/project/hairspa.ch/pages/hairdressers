@@ -1,0 +1,38 @@
+{
+    "template": {
+        "list": "hairdressers",
+        "detail": "hairdresser"
+    },
+    "name": "hairdressers",
+    "data": {
+        "back": {
+            "link": "index.html",
+            "label": "Back"
+        },
+        "title": "Home",
+        "tabs" : [{
+            "link": "philosophie.html",
+            "label": "Philosophies",
+            "selected": true
+        }, {
+            "link": "gallery.html",
+            "label": "Gallery"
+        }, {
+            "link": "hairdresser.html",
+            "label": "Hairdressers"
+        }],
+        "cascade": "hairdressers",
+        "hairdressers": [{
+            "name": "foo",
+            "photo": "images/hairdresser1.jpg",
+            "description": "description for hairaddress1"
+        }, {
+            "name": "bar",
+            "photo": "images/hairdresser2.jpg",
+            "description": "description for hairaddress2"
+        }]
+    },
+    "extendGlobal": {
+        "selectedMenu": 0
+    }
+}

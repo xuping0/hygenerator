@@ -1,5 +1,5 @@
 {
-    "template": "tabitem",
+    "template": "tab_basic",
     "name": "philosophie",
     "data": {
         "back": {
@@ -17,7 +17,8 @@
         }, {
             "link": "hairdresser.html",
             "label": "Hairdressers"
-        }]
+        }],
+        "content": "<image src='images/s1.png' width='100%'>Das Hairspa von Nadine Rebmann ist die erste Adresse in Zürich für die besondere Tiefenpflege von Haar und Kopfhaut. Bei uns steht neben dem perfekten Haarschnitt und Farbe, im Besonderen auch die Entspannung im Vordergrund. Die Behandlungsdauer wird individuell auf das Bedürfnis des Kunden abgestimmt und beträgt zwischen 30 und 90 Minuten. Egal ob sanftes Haarbad, vitalisierende Maske oder wirkungsvolle Kopfhautmassage - ein idealer Ort, um für einige Zeit dem hektischen Alltag zu entfliehen und sich verwöhnen zu lassen."
     },
     "extendGlobal": {
         "selectedMenu": 0

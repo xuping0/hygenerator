@@ -85,26 +85,34 @@ function generateBasicHTML(path, pageConfig, projectConfig) {
 }
 
 function generateCascadeHTML(path, pageConfig, projectConfig) {
-    // generate the id for each item
-    var idx = 0;
-    pageConfig.data.forEach(function(item) {
-        item.id = ++idx;
-    });
+
     // generate the list page
     generateBasicHTML(path, {
         template: pageConfig.template.list,
         name: pageConfig.name,
-        data: {
-            name: pageConfig.name,
-            items: pageConfig.data
-        }
+        data: pageConfig.data
     }, projectConfig);
+
+    var cascade = pageConfig.data.cascade;
+    if (!cascade) { return; }
+    if (!pageConfig.data[cascade]) { return; }
+
+    // generate the id for each item
+    var idx = 0;
+    pageConfig.data[cascade].forEach(function(item) {
+        item.id = idx++;
+    });
+
     // generate the detail page
-    pageConfig.data.forEach(function(item) {
+    pageConfig.data[cascade].forEach(function(item) {
+        var data = {};
+        extend(data, pageConfig.data);
+        data.cascadeObj = item;
+        data.parentConfig = pageConfig;
         generateBasicHTML(path, {
             template: pageConfig.template.detail,
             name: pageConfig.name + item.id,
-            data: item
+            data: data
         }, projectConfig);
     });
 }
