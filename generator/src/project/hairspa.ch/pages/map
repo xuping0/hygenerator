@@ -1,0 +1,15 @@
+{
+    "template": "map",
+    "name": "map",
+    "data": {
+        "back": {
+            "link": "index.html",
+            "label": "Back"
+        },
+        "title": "Map",
+        "mapsrc": "http://maps.google.ch/maps?f=q&source=embed&hl=de&geocode=&q=Schaffhauserstrasse+75+8057&sll=46.362093,9.036255&sspn=5.405538,9.876709&ie=UTF8&ll=47.393919,8.538651&spn=0.00581,0.010729&z=16&iwloc=A"
+    },
+    "extendGlobal": {
+        "selectedMenu": 3
+    }
+}

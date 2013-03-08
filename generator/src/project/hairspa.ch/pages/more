@@ -1,0 +1,10 @@
+{
+    "template": "more",
+    "name": "more",
+    "data": {
+        "title": "Mehr"
+    },
+    "extendGlobal": {
+        "selectedMenu": 4
+    }
+}

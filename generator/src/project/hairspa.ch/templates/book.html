@@ -21,26 +21,42 @@
     <view id="main" ui-background-style="striped" ui-navigation-status="current">
     <navbar>
         <h1>{{=it.title}}</h1>
-    </nav>
-    <subview ui-associations="withNavBar">
-        <scrollpanel>
-        <tableview id="addressers" ui-tablecell-order="stacked">
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="damen.html">
-                <img src="images/damen.jpg">
-                <celltitle>Damen</celltitle>
-            </tablecell>
-            <tablecell ui-usage="image" ui-implements="detail-disclosure" href="herren.html">
-                <img src="images/herren.jpg">
-                <celltitle>Herren</celltitle>
-            </tablecell>
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="kinder.html">
-                <img src="images/kinder.jpg">
-                <celltitle>Kinder</celltitle>
-            </tablecell>
-        </tableview>
-        <shim></shim>
-        </scrollpanel>
+    </navbar>
+    <subview>
+      <shim></shim>
+      <stack ui-box="horizontal">
+      <uibutton ui-kind="action" ui-implements="done">
+          <label>SMS</label>
+      </uibutton>
+      <uibutton id="tel" ui-kind="action" ui-implements="done">
+          <label>Call</a></label>
+      </uibutton>
+      </stack>
+      <uibutton id="tel" ui-kind="action" ui-implements="done">
+          <label>Online Booking</label>
+      </uibutton>
+      <shim></shim>
     </subview>
+    <!-- subview>
+        <scrollpanel>
+        <tableview>
+        <tableheader>My Appoinments:</tableheader>
+        <tablecell>
+        <celltitle>Appoinment 1</celltitle>
+        <cellsubtitle>Feb 2st</cellsubtitle>
+        </tablecell>
+        <tablecell>
+        <celltitle>Appoinment 2</celltitle>
+        <cellsubtitle>Feb 2st</cellsubtitle>
+        </tablecell>
+        <tablecell>
+        <celltitle>Appoinment 3</celltitle>
+        <cellsubtitle>Feb 2st</cellsubtitle>
+        </tablecell>
+        </tableview>
+         <shim></shim> 
+        </scrollpanel>
+    </subview-->
     <tabbar ui-selected-tab="{{=it.global.selectedMenu}}">
 {{~ it.global.menus :menu:i }}
      <uibutton implements="tab" href="{{=menu.link}}">

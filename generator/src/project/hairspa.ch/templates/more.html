@@ -20,22 +20,26 @@
 <app>
     <view id="main" ui-background-style="striped" ui-navigation-status="current">
     <navbar>
-        <h1>{{=it.title}}</h1>
-    </nav>
+        <h1>Mehr</h1>
+    </navbar>
     <subview ui-associations="withNavBar">
         <scrollpanel>
         <tableview id="addressers" ui-tablecell-order="stacked">
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="damen.html">
-                <img src="images/damen.jpg">
-                <celltitle>Damen</celltitle>
+            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="http://www.twitter.com">
+                <img src="images/twitter.png">
+                <celltitle>Follow me on Twitter</celltitle>
             </tablecell>
-            <tablecell ui-usage="image" ui-implements="detail-disclosure" href="herren.html">
-                <img src="images/herren.jpg">
-                <celltitle>Herren</celltitle>
+            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="http://www.facebook.com">
+                <img src="images/facebook-logo.png">
+                <celltitle>Follow me on Facebook</celltitle>
             </tablecell>
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="kinder.html">
-                <img src="images/kinder.jpg">
-                <celltitle>Kinder</celltitle>
+            <tablecell ui-usage="image" ui-implements="detail-disclosure" href="http://www.hairspa.ch/news_events.html">
+                <img src="images/news.png">
+                <celltitle>News</celltitle>
+            </tablecell>
+            <tablecell ui-usage="image" ui-implements="detail-disclosure" href="http://www.hairspa.ch/jobs.html">
+                <img src="images/job.png">
+                <celltitle>Jobs</celltitle>
             </tablecell>
         </tableview>
         <shim></shim>

@@ -1,0 +1,14 @@
+{
+    "template": "book",
+    "name": "book",
+    "data": {
+        "back": {
+            "link": "index.html",
+            "label": "Back"
+        },
+        "title": "Buchen"
+    },
+    "extendGlobal": {
+        "selectedMenu": 2
+    }
+}

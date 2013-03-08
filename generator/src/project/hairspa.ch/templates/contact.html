@@ -21,25 +21,50 @@
     <view id="main" ui-background-style="striped" ui-navigation-status="current">
     <navbar>
         <h1>{{=it.title}}</h1>
-    </nav>
-    <subview ui-associations="withNavBar">
-        <scrollpanel>
-        <tableview id="addressers" ui-tablecell-order="stacked">
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="damen.html">
-                <img src="images/damen.jpg">
-                <celltitle>Damen</celltitle>
-            </tablecell>
-            <tablecell ui-usage="image" ui-implements="detail-disclosure" href="herren.html">
-                <img src="images/herren.jpg">
-                <celltitle>Herren</celltitle>
-            </tablecell>
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="kinder.html">
-                <img src="images/kinder.jpg">
-                <celltitle>Kinder</celltitle>
-            </tablecell>
-        </tableview>
-        <shim></shim>
-        </scrollpanel>
+    </navbar>
+    <subview>
+      <scrollpanel>
+      <shim></shim>
+      <stack ui-box="horizontal">
+      <uibutton id="map" ui-kind="action" ui-implements="done">
+          <label>Map</label>
+      </uibutton>
+      <uibutton id="sms" ui-kind="action" ui-implements="done">
+          <label>SMS</a></label>
+      </uibutton>
+      </stack>
+      <stack ui-box="horizontal">
+      <uibutton id="tel" ui-kind="action" ui-implements="done">
+          <label>Call</label>
+      </uibutton>
+      <uibutton id="email" ui-kind="action" ui-implements="done">
+          <label>Email</label>
+      </uibutton>
+      </stack>
+      <tableview ui-kind="titled-list">
+      <tableheader>offnungszeiten:</tableheader>
+      <tablecell>
+      <celltitle>Montag-Mittwoch</celltitle>
+      <cellsubtitle>10:00 - 20:30</cellsubtitle>
+      </tablecell>
+      <tablecell>
+      <celltitle>Donnerstag - Freitag</celltitle>
+      <cellsubtitle>11:00 - 17:00</cellsubtitle>
+      </tablecell>
+      </tableview>
+      <shim></shim> 
+      <tableview>
+      <tablecell>
+      <celldetail style="font-size:16px;line-height:20px;">
+        DIREKT AM SCHAFFHAUSERPLATZ<br>
+        BEIM MIGROS HAUS<br>
+        SCHAFFHAUSERSTRASSE 75<br>
+        8057 ZÜRICH 6
+        </celldetail>
+      </tablecell>
+      </tableview>
+      <shim></shim> 
+      </scrollpanel>
     </subview>
     <tabbar ui-selected-tab="{{=it.global.selectedMenu}}">
 {{~ it.global.menus :menu:i }}
