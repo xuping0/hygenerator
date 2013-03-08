@@ -1,0 +1,42 @@
+{
+    "template": {
+        "list": "gallery",
+        "detail": "gallery_detail"
+    },
+    "name": "gallery",
+    "data": {
+        "back": {
+            "link": "index.html",
+            "label": "Back"
+        },
+        "title": "Home",
+        "tabs" : [{
+            "link": "philosophie.html",
+            "label": "Philosophies",
+            "selected": true
+        }, {
+            "link": "gallery.html",
+            "label": "Gallery"
+        }, {
+            "link": "hairdresser.html",
+            "label": "Hairdressers"
+        }],
+        "cascade": "photos",
+        "photos": [{
+            "src": "images/gallery1_s.jpg"
+        }, {
+            "src": "images/gallery2_s.jpg"
+        }, {
+            "src": "images/gallery3_s.jpg"
+        }, {
+            "src": "images/gallery4_s.jpg"
+        }, {
+            "src": "images/gallery5_s.jpg"
+        }, {
+            "src": "images/gallery6_s.jpg"
+        }]
+    },
+    "extendGlobal": {
+        "selectedMenu": 0
+    }
+}

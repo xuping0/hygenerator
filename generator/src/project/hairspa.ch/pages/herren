@@ -1,0 +1,18 @@
+{
+    "template": "service_price",
+    "name": "herren",
+    "data": {
+        "back": {
+            "link": "index.html",
+            "label": "Back"
+        },
+        "title": "Herren",
+        "prices": [{
+            "service": "Wash and blow-dry",
+            "cost": "CHF   52  to  65"
+        }]
+    },
+    "extendGlobal": {
+        "selectedMenu": 2
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "template": "service",
+    "name": "service",
+    "data": {
+        "back": {
+            "link": "index.html",
+            "label": "Back"
+        },
+        "title": "Service"
+    },
+    "extendGlobal": {
+        "selectedMenu": 1
+    }
+}

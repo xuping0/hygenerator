@@ -1,0 +1,24 @@
+{
+    "template": "service_price",
+    "name": "kinder",
+    "data": {
+        "back": {
+            "link": "index.html",
+            "label": "Back"
+        },
+        "title": "Kinder",
+        "prices": [{
+            "service": "Wash and blow-dry",
+            "cost": "CHF   52  to  65"
+        }, {
+            "service": "Wash, cut and blow-dry (45-60min.)",
+            "cost": "CHF    95  to  120"
+        }, {
+            "service": "Wash, cut and blow-dry (45-60min.)",
+            "cost": "CHF    95  to  120"
+        }]
+    },
+    "extendGlobal": {
+        "selectedMenu": 2
+    }
+}

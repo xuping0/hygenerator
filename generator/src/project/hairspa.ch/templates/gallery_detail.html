@@ -20,34 +20,15 @@
 <app>
     <view id="main" ui-background-style="striped" ui-navigation-status="current">
     <navbar>
-        <uibutton id="back" ui-icon-align="left" ui-bar-align="left" href="{{=it.back.link}}">
+        <uibutton id="back" ui-icon-align="left" ui-bar-align="left" href="{{=it.parentConfig.name}}.html">
             <icon style="-webkit-mask-image: url(icons/back.png)"></icon>
             <label>{{=it.back.label}}</label>
         </uibutton>
         <h1>{{=it.title}}</h1>
     </navbar>
-    <subview ui-associations="withNavBar">
+        <subview ui-associations="withNavBar">
         <scrollpanel>
-        <shim></shim> 
-        <stack> 
-            <segmentedcontrol>
-{{~ it.tabs : tab }}
-            <uibutton class="{{? tab.selected == true}}selected{{?}}" href="{{=tab.link}}"> <label>{{=tab.label}}</label></uibutton>
-{{~}}
-            </segmentedcontrol>
-        </stack>
-        <div style="height: 20px;"></div>
-        <div class="appcontainer">
-        <tableview id="hairdressers" ui-tablecell-order="stacked">
-{{~ it.hairdressers :hairdresser:i }}
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="hairadresserl{{=i}}.html">
-                <img src="{{=hairdresser.photo}}">
-                <celltitle>{{=hairdresser.name}}</celltitle>
-            </tablecell>
-{{~}}
-        </tableview>
-        </div>
-        <shim></shim> 
+        <img src="{{=it.cascadeObj.src}}" width="100%">
         </scrollpanel>
     </subview>
     <tabbar ui-selected-tab="{{=it.global.selectedMenu}}">
