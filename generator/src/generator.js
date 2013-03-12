@@ -2,6 +2,7 @@ var fs = require("fs");
 var doT = require("dot");
 var fs = require('fs');
 var extend = require("node.extend");
+var wrench = require('wrench');
 
 
 // modify the default setting
@@ -117,6 +118,17 @@ function generateCascadeHTML(path, pageConfig, projectConfig) {
     });
 }
 
+function copyAsserts(project) {
+    var dirList = fs.readdirSync(project.templates);
+    dirList.forEach(function(item) {
+        if (fs.statSync(project.templates + '/' + item).isDirectory()) {
+            var newDir = project.output + '/' + item;
+            fs.mkdirSync(newDir);
+            wrench.copyDirSyncRecursive(project.templates + '/' + item, newDir);
+        }
+    });
+}
+
 function generateProject(project) {
     // create the project folder in the output
     if (!fs.existsSync(project.output)) {
@@ -135,6 +147,10 @@ function generateProject(project) {
             }
         }
     });
+
+    // copy the static resource to the target folder
+    copyAsserts(project);
+
 }
 
 function generate(projects) {
