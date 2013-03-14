@@ -1,12 +1,16 @@
 /* Local JavaScript Here */
 $(function() {
-    var TIMEOUT = 100;
+    var TIMEOUT = 50;
     $("#main").UITabBar();
     $("#back").click(function() {
         var $this = $(this), href = $this.attr("href");
         if (href) {
             setTimeout(function() {
-                window.location.href = href;
+                if (href.indexOf('http') < 0) {
+                    window.location.href = href;
+                } else {
+                    window.open(href, '_blank', 'location=yes');
+                }
             }, TIMEOUT);
         } else {
             window.location.href = "index.html";
@@ -25,7 +29,11 @@ $(function() {
         var $this = $(this), href = $this.attr("href");
         if (href) {
             setTimeout(function() {
-                window.location.href = href;
+                if (href.indexOf('http') < 0) {
+                    window.location.href = href;
+                } else {
+                    window.open(href, '_blank', 'location=yes');
+                }
             }, TIMEOUT);
         }
     });
@@ -33,16 +41,24 @@ $(function() {
         var $this = $(this), href = $this.attr("href");
         if (href) {
             setTimeout(function() {
-                window.location.href = href;
-            }, TIMEOUT)
+                if (href.indexOf('http') < 0) {
+                    window.location.href = href;
+                } else {
+                    window.open(href, '_blank', 'location=yes');
+                }
+            }, TIMEOUT);
         };
     });
     $("#links").delegate("tablecell", "click", function() {
         var $this = $(this), href = $this.attr("href");
         if (href) {
             setTimeout(function() {
-                window.location.href = href;
-            }, TIMEOUT)
+                if (href.indexOf('http') < 0) {
+                    window.location.href = href;
+                } else {
+                    window.open(href, '_blank', 'location=yes');
+                }
+            }, TIMEOUT);
         };
     });
 });

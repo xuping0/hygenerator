@@ -6,7 +6,7 @@ var wrench = require('wrench');
 
 
 // modify the default setting
-doT.templateSettings.strip = false;
+doT.templateSettings.strip = true;
 
 var GLOABAL = {
     PROJECT: "project",
