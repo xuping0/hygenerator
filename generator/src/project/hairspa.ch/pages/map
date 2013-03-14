@@ -3,7 +3,7 @@
     "name": "map",
     "data": {
         "back": {
-            "link": "index.html",
+            "link": "contact.html",
             "label": "Back"
         },
         "title": "Map",

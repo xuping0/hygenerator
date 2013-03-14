@@ -36,12 +36,12 @@
 {{~}}
             </segmentedcontrol>
         </stack>
-        <table style="margin:auto;">
-        <tr>
+        <table style="margin:auto;" width="96%" style="margin:auto;">
 {{~ it.photos :photo:i }}
-        <td><a href="gallery_detail{{=photo.id}}.html"><img src="{{=photo.src}}"></a></td>
-{{~ }}
+        <tr>
+        <td><a href="gallery{{=photo.id}}.html"><img width="100%" src="{{=photo.src}}"></a></td>
         </tr>
+{{~ }}
         </table>
         <shim></shim> 
         </scrollpanel>

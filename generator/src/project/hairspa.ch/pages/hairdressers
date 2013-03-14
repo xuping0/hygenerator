@@ -12,14 +12,14 @@
         "title": "Home",
         "tabs" : [{
             "link": "philosophie.html",
-            "label": "Philosophy",
-            "selected": true
+            "label": "Philosophy"
         }, {
             "link": "gallery.html",
             "label": "Gallery"
         }, {
-            "link": "hairdresser.html",
-            "label": "Hairdressers"
+            "link": "hairdressers.html",
+            "label": "Hairdressers",
+            "selected": true
         }],
         "cascade": "hairdressers",
         "hairdressers": [{

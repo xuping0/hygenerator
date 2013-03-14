@@ -2,10 +2,6 @@
     "template": "contact",
     "name": "contact",
     "data": {
-        "back": {
-            "link": "index.html",
-            "label": "Back"
-        },
         "title": "Contact"
     },
     "extendGlobal": {

@@ -3,7 +3,7 @@
     "name": "kinder",
     "data": {
         "back": {
-            "link": "index.html",
+            "link": "service.html",
             "label": "Back"
         },
         "title": "Kinder",

@@ -87,13 +87,6 @@ function generateBasicHTML(path, pageConfig, projectConfig) {
 
 function generateCascadeHTML(path, pageConfig, projectConfig) {
 
-    // generate the list page
-    generateBasicHTML(path, {
-        template: pageConfig.template.list,
-        name: pageConfig.name,
-        data: pageConfig.data
-    }, projectConfig);
-
     var cascade = pageConfig.data.cascade;
     if (!cascade) { return; }
     if (!pageConfig.data[cascade]) { return; }
@@ -103,6 +96,13 @@ function generateCascadeHTML(path, pageConfig, projectConfig) {
     pageConfig.data[cascade].forEach(function(item) {
         item.id = idx++;
     });
+
+    // generate the list page
+    generateBasicHTML(path, {
+        template: pageConfig.template.list,
+        name: pageConfig.name,
+        data: pageConfig.data
+    }, projectConfig);
 
     // generate the detail page
     pageConfig.data[cascade].forEach(function(item) {
