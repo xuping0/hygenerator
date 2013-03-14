@@ -1,3 +1,3 @@
 #stack_01 celldetail { font-size: 12px; line-height: 20px; }
 tabbar icon.selected { background-image: -webkit-gradient(linear, 0 0, 30% 100%, from(yellow), color-stop(0.45, orange), to(red)); }
-.appcontaindoneolor: #fff;}
+.appcontainer { width: 94%; margin: auto;}
