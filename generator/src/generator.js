@@ -97,6 +97,8 @@ function generateCascadeHTML(path, pageConfig, projectConfig) {
         item.id = idx++;
     });
 
+    extend(projectConfig.global, pageConfig.extendGlobal);
+
     // generate the list page
     generateBasicHTML(path, {
         template: pageConfig.template.list,

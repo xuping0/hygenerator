@@ -37,7 +37,7 @@ $(function() {
             }, TIMEOUT)
         };
     });
-    $("#addressers").delegate("tablecell", "click", function() {
+    $("#links").delegate("tablecell", "click", function() {
         var $this = $(this), href = $this.attr("href");
         if (href) {
             setTimeout(function() {

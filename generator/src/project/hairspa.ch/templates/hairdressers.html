@@ -38,11 +38,11 @@
         </stack>
         <div style="height: 20px;"></div>
         <div class="appcontainer">
-        <tableview id="hairdressers" ui-tablecell-order="stacked">
+        <tableview id="links" ui-tablecell-order="stacked">
 {{~ it.hairdressers :hairdresser:i }}
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="hairadresserl{{=i}}.html">
+            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="hairdressers{{=i}}.html">
                 <img src="{{=hairdresser.photo}}">
-                <celltitle>{{=hairdresser.name}}</celltitle>
+                <celltitle>{{=hairdresser.name}}  <span style="font-size:12px;">{{=hairdresser.description}}</span></celltitle>
             </tablecell>
 {{~}}
         </tableview>
