@@ -15,6 +15,16 @@
     <script src="./chui/chui.js"></script>
     <script src="./chui/iscroll.js"></script>
     <script src="./js/base.js"></script>
+    <style>
+    #addressers { margin: auto; width: 90%;}
+    #addressers img {
+        display: block;
+        height: 120px;
+        margin: auto;
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+    </style>
 </head>
 <body>
 <app>
@@ -23,23 +33,13 @@
         <h1>{{=it.title}}</h1>
     </navbar>
     <subview ui-associations="withNavBar">
-        <scrollpanel>
-        <tableview id="addressers" ui-tablecell-order="stacked">
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="damen.html">
-                <img src="images/damen.jpg">
-                <celltitle>Damen</celltitle>
-            </tablecell>
-            <tablecell ui-usage="image" ui-implements="detail-disclosure" href="herren.html">
-                <img src="images/herren.jpg">
-                <celltitle>Herren</celltitle>
-            </tablecell>
-            <tablecell  ui-usage="image" ui-implements="detail-disclosure" href="kinder.html">
-                <img src="images/kinder.jpg">
-                <celltitle>Kinder</celltitle>
-            </tablecell>
-        </tableview>
         <shim></shim>
-        </scrollpanel>
+        <div id="addressers">
+            <a href="damen.html"><img src="images/damen.jpg"></a>
+            <a href="herren.html"><img src="images/herren.jpg"></a>
+            <a href="kinder.html"><img src="images/kinder.jpg"></a>
+        </div>
+        <shim></shim>
     </subview>
     <tabbar ui-selected-tab="{{=it.global.selectedMenu}}">
 {{~ it.global.menus :menu:i }}
