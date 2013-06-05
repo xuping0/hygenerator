@@ -1,0 +1,37 @@
+@media (min-width: 800px) {
+	body {
+	   padding-top:50px;
+	}
+}
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  min-height: 100%;
+}
+.tab-pane {
+  min-height: 400px;
+}
+.gridStyle {
+  border: 1px solid rgb(212,212,212);
+  height: 328px;
+  width: 99%;
+}
+
+.preview .mobile {
+	background: url(../img/mobile.png) no-repeat center -55px;
+	height: 750px;
+	position: relative;
+}
+.preview .mobile .content{
+	background: #ccc;
+	width: 314px;
+	height: 480px;
+	left: 92px;
+	top:126px;
+	position: absolute;
+}
+#properties input {
+	margin-bottom: 5px;
+}
