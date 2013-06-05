@@ -1,0 +1,11 @@
+{
+  "name": "everdefiner-collector",
+  "main": "pages/index.html",
+  "window": {
+    "icon": "everdefiner.png",
+    "toolbar": true,
+    "width": 1000,
+    "height": 800,
+    "position": "mouse"
+  }
+}

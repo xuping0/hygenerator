@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head >
+  <title>Mobile应用定制器</title>
+  <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+  <link href="css/ng-grid.css" rel="stylesheet" media="screen">
+  <link href="css/app.css" rel="stylesheet" media="screen">
+
+  <script src="vendor/jquery-1.9.1.min.js"></script>
+
+  <script src="vendor/angular.js"></script>
+  <script src="vendor/ng-grid-2.0.5.min.js"></script>
+  
+  <script src="vendor/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="#">Mobile应用定制器</a>
+      <div class="nav-collapse collapse">
+        <definer-nav></definer-nav>
+        <p class="navbar-text pull-right">
+        </p>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div ng-view>
+    </div><!--/span-->
+  </div><!--/row-->
+
+</div>
+
+<script src="vendor/seajs/sea.js"
+        data-config="./scripts/config.js"
+        data-main="./scripts/main.js"></script>
+</body>
+</html>
