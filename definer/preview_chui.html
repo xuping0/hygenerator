@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head >
+  <title>基于Chui的预览效果</title>
+  <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/preview/chui.android.css"></link>
+  <link rel="stylesheet" href="css/preview/chui.preview.css"></link>
+  <script src="vendor/zepto.js"></script>
+  <script src="vendor/chui/chui.android.js"></script>
+  <script src="vendor/chui/iscroll.js"></script>
+</head>
+
+<body>
+<app>
+<view id="main" ui-background-style="striped" ui-navigation-status="current">
+    <navbar>
+        <uibutton ui-bar-align="left" ui-implements="edit" style="margin-top: 10px;">
+            <a href="index.html"><label>返回</label></a>
+        </uibutton>
+        <h1>会议介绍</h1>
+    </navbar>
+    <subview ui-associations="withNavBar withBottomToolbar">
+        <scrollpanel>
+        <p>欢迎您来到2013联想全球供应商大会的官方网站！我们诚挚地邀请您参加于5月29日至31日在合肥举办的全球供应商大会。</p><p>联想集团诚挚地邀请您参加将于5月29日至31日在合肥举行的2013年联想全球供应商大会。届时，联想集团董事长兼首席执行官杨元庆和公司高层领导将出席会议，分享联想的新财年战略，商讨与供应商之间长期合作共赢之道。</p><p>今年的大会主题是“LET'S+, 携手再出发”，除主会之外，我们还安排了相应的“分会”及“高峰论坛”，着重讨论在PC+时代，联想和供应商如何通过创新，携手引领PC+时代。此外，我们还将在5月30日为您准备了丰富的晚宴和供应商颁奖仪式。</p><p>由于酒店房间资源有限，建议您务必尽早完成注册并预订酒店。建议联想员工共享酒店房间。</p><p style="color:red">注册截至时间：2013年5月15日</p><p>我们期待在大会上与您相见，也盼望在2013/14新财年与您继续合作，再创佳绩！</p><p>联想2013年供应商大会组委会</p>
+        </scrollpanel>
+    </subview>
+    <toolbar id="menu" ui-placement="bottom">
+        <div class="menu">
+        
+        <a href="intro.html" target="_top" class="selected">会议介绍</a>
+        
+        <a href="map.html" target="_top" class="">会场地图</a>
+        
+        <a href="guest.html" target="_top" class="">联想领导</a>
+        
+        </div>
+    </toolbar>
+</view>
+</app>
+</body>
+</html>
