@@ -18,6 +18,9 @@ body {
   height: 328px;
   width: 99%;
 }
+.pages .uname {
+	color: red !important;
+}
 
 .preview .mobile {
 	background: url(../img/mobile.png) no-repeat -29px -55px;

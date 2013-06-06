@@ -1,12 +1,12 @@
 'use strict';
 define(function(require, exports) {
 
-  require("./resources/Page");
+  require("./services/PageService");
   require("./directives/list");
   require("./directives/preview");
   require("./directives/properties");
 
-  angular.module('definerPage', ['definerPageModel', 'definerPageList', 'definerPagePreview', 'definerPageProperties'])
+  angular.module('definerPage', ['definerPageService', 'definerPageList', 'definerPagePreview', 'definerPageProperties'])
   .controller('PageController', function ($scope) {
   });
 });

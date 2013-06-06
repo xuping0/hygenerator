@@ -7,7 +7,7 @@ a { color: #fff; text-decoration: none;}
 .menu {
     width: 100%;
     height: 60px;
-    background: url(../images/page_05.png) repeat-x;
+    background: url(./images/page_05.png) repeat-x;
     border-top: 1px solid #000;
 }
 .menu a {
@@ -19,10 +19,10 @@ a { color: #fff; text-decoration: none;}
     color: #666 !important;
     text-decoration: none;
     text-align:center;
-    background: url(../images/page_05.png) repeat-x;
+    background: url(./images/page_05.png) repeat-x;
 }
 .menu a.selected {
-   background: url(../images/page_07.png) repeat-x;
+   background: url(./images/page_07.png) repeat-x;
    font-weight: bold;
    font-size: 1.1em;
    color: #fff !important;

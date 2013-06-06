@@ -4,12 +4,12 @@ define(function(require, exports) {
   var template = require("../templates/list.html");
 
   angular.module('definerPageList', [])
-  .controller('PageListController', ['$scope', 'PageModel', function ($scope, PageModel) {
-    $scope.selectedPage = PageModel.getSelected();
-    $scope.pages = PageModel.list();
+  .controller('PageListController', ['$scope', 'PageService', function ($scope, PageService) {
+    $scope.pages = PageService.list();
+    $scope.selectedPage = PageService.getSelected();
     $scope.select = function(idx) {
-      $scope.selectedPage = PageModel.setSelected(idx);
-    }
+      $scope.selectedPage = PageService.setSelected(idx);
+    };
   }])
   .directive("definerPageList", ['$location', function ($location) {
     return {

@@ -4,7 +4,7 @@ define(function(require, exports) {
   var template = require("../templates/preview.html");
 
   angular.module('definerPagePreview', [])
-  .controller('PagePreviewController', ['$scope', 'PageModel', function ($scope, PageModel) {
+  .controller('PagePreviewController', ['$scope', 'PageService', function ($scope, PageService) {
   }])
   .directive("definerPagePreview", ['$location', function ($location) {
     return {

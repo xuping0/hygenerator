@@ -1,10 +1,10 @@
 {
-  "name": "everdefiner-collector",
-  "main": "pages/index.html",
+  "name": "mobile-app-definer",
+  "main": "index.html",
   "window": {
     "icon": "everdefiner.png",
     "toolbar": true,
-    "width": 1000,
+    "width": 1200,
     "height": 800,
     "position": "mouse"
   }
