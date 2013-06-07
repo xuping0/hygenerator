@@ -25,6 +25,7 @@ define(function(require, exports) {
       savePage();
     });
 
+    // header text
     $scope.showHeader = function() {
       $scope.selectedPage.header.enabled = true;
       savePage();
@@ -59,6 +60,21 @@ define(function(require, exports) {
       savePage();
     });
 
+    // back text
+    $scope.showBack = function() {
+      $scope.selectedPage.header.back.enabled = true;
+      savePage();
+    };
+    $scope.hideBack = function() {
+      $scope.selectedPage.header.back.enabled = false;
+      savePage();
+    };
+    $scope.$watch('selectedPage.header.back.text.cn', function() {
+      savePage();
+    });
+    $scope.$watch('selectedPage.header.back.text.en', function() {
+      savePage();
+    });
   }])
   .directive("definerPageProperties", ['$location', function ($location) {
     return {

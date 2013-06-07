@@ -39,6 +39,22 @@
         </td>
         </tr>
 
+        <tr>
+        <td valign="top"><label class="control-label">显示返回键?:</label></td>
+        <td>
+        <button class="btn btn-small" type="button" ng-show="!selectedPage.header.back.enabled" ng-disabled="selectedPage.locked" ng-click="showBack()">否</button>
+        <button class="btn btn-small" type="button" ng-show="selectedPage.header.back.enabled" ng-disabled="selectedPage.locked"  ng-click="hideBack()">是</button>
+        </td>
+        </tr>
+
+        <tr ng-show="selectedPage.header.back.enabled">
+        <td valign="top"><label class="control-label" for="phdtext">返回文字:</label></td>
+        <td>
+        <div><span>中文:<span><input type="text" id="phdtext" placeholder="请编写返回键文字" ng-model="selectedPage.header.back.text.cn" ng-disabled="selectedPage.locked" required></div><br/>
+        <div><span>英文:<span><input type="text" placeholder="Please type back button text" ng-model="selectedPage.header.back.text.en" ng-disabled="selectedPage.locked" required></div>
+        </td>
+        </tr>
+
         </table>
       </div>
     </div>

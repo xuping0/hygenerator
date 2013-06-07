@@ -26,8 +26,8 @@ define(function(require, exports) {
               "back": {
                 "enabled": true,
                 "text": {
-                  "cn": "请编写Header固定文字",
-                  "en": "Please use header text"
+                  "cn": "请编写返回键文字",
+                  "en": "Please type back button text"
                 }
               }
             },
