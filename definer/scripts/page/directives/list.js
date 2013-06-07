@@ -6,9 +6,6 @@ define(function(require, exports) {
   angular.module('definerPageList', [])
   .controller('PageListController', ['$scope', 'PageService', function ($scope, PageService) {
     $scope.pages = PageService.list();
-    if ($scope.pages.length == 0) {
-      PageService.create();
-    }
     $scope.selectedPage = PageService.getSelected();
     $scope.select = function(idx) {
       $scope.selectedPage = PageService.setSelected(idx);

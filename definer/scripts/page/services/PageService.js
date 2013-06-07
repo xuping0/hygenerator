@@ -12,7 +12,8 @@ define(function(require, exports) {
             "name": null,
             "created_time": time,
             "modified_time": time,
-            "path": time + '.json'
+            "path": time + '.json',
+            "locked": false
         };
         util.write(page);
         pages.push(page);
@@ -26,6 +27,10 @@ define(function(require, exports) {
         });
 
         util.fill(pages);
+
+        if (pages.length == 0) {
+          this.create();
+        }
 
         selected = pages[0];
 
