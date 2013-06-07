@@ -1,6 +1,6 @@
 <div class="buttons">
-<button class="btn btn-small" type="button" ng-show="!selectedPage.locked" ng-click="lock()">锁定</button>
-<button class="btn btn-small" type="button" ng-show="selectedPage.locked" ng-click="unlock()">解锁</button>
+<button class="btn btn-small" type="button" ng-show="!selectedPage.locked" ng-click="lock()"><i class=icon-edit></i>可编辑</button>
+<button class="btn btn-small" type="button" ng-show="selectedPage.locked" ng-click="unlock()"><i class=icon-lock></i>已锁定</button>
 </div>
 <div class="accordion" id="properties">
   <div class="accordion-group">
@@ -23,7 +23,7 @@
         </td>
         </tr>
 
-        <tr>
+        <tr ng-show="selectedPage.header.enabled">
         <td valign="top"><label class="control-label" for="phdtext">编辑Header文字?:</label></td>
         <td>
         <button class="btn btn-small" type="button" ng-show="!selectedPage.header.label.enabled" ng-disabled="selectedPage.locked" ng-click="showHeaderText()">否</button>
@@ -31,7 +31,7 @@
         </td>
         </tr>
 
-        <tr>
+        <tr ng-show="selectedPage.header.enabled">
         <td valign="top"><label class="control-label" for="phdtext">Header文字:</label></td>
         <td>
         <div><span>中文:<span><input type="text" id="phdtext" placeholder="请编写Header固定文字" ng-model="selectedPage.header.label.text.cn" ng-disabled="headerTextDisabled" required></div><br/>
