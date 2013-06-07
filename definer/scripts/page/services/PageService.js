@@ -6,8 +6,19 @@ define(function(require, exports) {
     var pages = [], selected,
         util = nodejs.require("pageutil");
     return {
-      get: function(id) {
-        return {name: "门店1", phone: 50, email: 50, weibo: 50, weixin: 50, note: "备注"}
+      create: function() {
+        var time = (new Date()).getTime();
+        var page = {
+            "name": null,
+            "created_time": time,
+            "modified_time": time,
+            "path": time + '.json'
+        };
+        util.write(page);
+        pages.push(page);
+      },
+      get: function(page) {
+        return {}
       },
       list: function() {
         $(pages).each(function(i, page) {
@@ -21,6 +32,8 @@ define(function(require, exports) {
         return pages;
       },
       save: function(page) {
+        if (!page) { return; }
+        page.modified_time = (new Date()).getTime();
         util.write(page);
       },
       getSelected: function() {
@@ -29,9 +42,6 @@ define(function(require, exports) {
       setSelected: function(idx) {
         selected = pages[idx];
         return selected;
-      },
-      create: function() {
-        console.info(this.name);
       }
     }
   });

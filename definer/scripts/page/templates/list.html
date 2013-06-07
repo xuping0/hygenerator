@@ -1,5 +1,9 @@
-<div class="well sidebar-nav">
-<ul class="nav nav-list pages">
+<div class="buttons">
+<button class="btn btn-small" type="button" ng-click="createPage()">新增</button>
+<button class="btn btn-small btn-danger" type="button" ng-click="deletePage()">删除</button>
+</div>
+<div class="well sidebar-nav pages">
+<ul class="nav nav-list">
   <li ng-repeat="page in pages" ng-class="{'active': selectedPage == page}">
   <a href="javascript:void(0)" ng-click="select($index)" ng-class="{'uname': !page.name}">{{page.name || '未命名'}}</a>
   </li>

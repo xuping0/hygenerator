@@ -18,14 +18,19 @@ body {
   height: 328px;
   width: 99%;
 }
+
+.buttons { margin-bottom: 10px;}
+
 .pages .uname {
 	color: red !important;
 }
+
 
 .preview .mobile {
 	background: url(../img/mobile.png) no-repeat -29px -55px;
 	height: 750px;
 	position: relative;
+	display: none;
 }
 .preview .mobile .content{
 	background: #ccc;
