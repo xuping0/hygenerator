@@ -5,27 +5,42 @@ define(function(require, exports) {
 
   angular.module('definerPageList', [])
   .controller('PageListController', ['$scope', 'PageService', function ($scope, PageService) {
+
+    // 列表初始化
     $scope.pages = PageService.list();
-    $scope.selectedPage = PageService.getSelected();
+
+    // 选择
     $scope.select = function(idx) {
       $scope.selectedPage = PageService.setSelected(idx);
     };
+    $scope.select(0);
+
+    // 新增
     $scope.createPage = function() {
       PageService.create();
+      $scope.select($scope.pages.length - 1);
     }
+
+    // 删除
+    $scope.unremoveable = false;
+    $scope.$watch('pages.length', function() {
+      if ($scope.pages.length === 1) {
+        $scope.unremoveable = true;
+      } else {
+        $scope.unremoveable = false;
+      }
+    });
     $scope.removePage = function() {
       if (!$scope.selectedPage) {
         alert('请选择页面!');
         return;
       }
-      if ($scope.pages.length == 1) {
-        alert("至少保留一个页面!");
-        return;
-      }
       if (confirm('您是否要删除该页面?')) {
         PageService.remove($scope.selectedPage);
+        $scope.selectedPage = PageService.setSelected(0);
       }
     }
+
   }])
   .directive("definerPageList", ['$location', function ($location) {
     return {

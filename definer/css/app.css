@@ -30,7 +30,7 @@ body {
 	background: url(../img/mobile.png) no-repeat -29px -55px;
 	height: 750px;
 	position: relative;
-	display: none;
+	display: block;
 }
 .preview .mobile .content{
 	background: #ccc;
@@ -41,5 +41,16 @@ body {
 	position: absolute;
 }
 #properties input {
-	margin-bottom: 5px;
+	margin: 0px;
+}
+#properties button {
+  margin: 0px;
+}
+#properties td {
+	padding-top: 5px;
+}
+#properties label {
+	position: relative;
+	bottom: -2px;
+	font-weight: bold;
 }
