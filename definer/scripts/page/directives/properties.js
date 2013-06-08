@@ -7,10 +7,25 @@ define(function(require, exports) {
 
   angular.module('definerPageProperties', ['definerPageLangSelect'])
   .controller('PagePropertiesController', ['$scope', 'PageService', function ($scope, PageService) {
+    // base function
     function savePage() {
       PageService.save($scope.selectedPage);
     };
 
+    // lang select
+    $scope.langIsZhCn = true;
+    $scope.langIsEn = false;
+    $scope.$watch('previewSetting.lang.id', function() {
+      $scope.langIsZhCn = false;
+      $scope.langIsEn = false;
+      if ($scope.previewSetting.lang.id == 'zh-cn') {
+        $scope.langIsZhCn = true;
+      } else if ($scope.previewSetting.lang.id == 'en') {
+        $scope.langIsEn = true;
+      }
+    });
+
+    // lock/unlock
     $scope.unlock = function() {
       $scope.selectedPage.locked = false;
       setHeaderTextDisabled();
@@ -23,6 +38,7 @@ define(function(require, exports) {
       savePage();
     };
 
+    // name
     $scope.$watch('selectedPage.name', function() {
       savePage();
     });
@@ -36,6 +52,13 @@ define(function(require, exports) {
       $scope.selectedPage.header.enabled = false;
       savePage();
     };
+    $scope.$watch('selectedPage.header.enabled', function() {
+      if ($scope.selectedPage.header.enabled === false) {
+        $scope.selectedPage.header.label.enabled = false;
+        $scope.selectedPage.header.back.enabled = false;
+      }
+      savePage();
+    });
 
     $scope.headerTextDisabled = true;
     function setHeaderTextDisabled() {

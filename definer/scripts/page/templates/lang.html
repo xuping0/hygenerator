@@ -1,9 +1,9 @@
 <div class="btn-group">
-  <button class="btn" ng-disabled="selectedPage.locked">{{selectedApp.lang[0].label}}</button>
+  <button class="btn" ng-disabled="selectedPage.locked">{{previewSetting.lang.label}}</button>
   <button class="btn dropdown-toggle" data-toggle="dropdown" ng-disabled="selectedPage.locked">
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
-    <li ng-repeat="lang in selectedApp.lang"><a tabindex="-1" href="javascript:void(0)">{{lang.label}}</a></li>
+    <li ng-repeat="lang in selectedApp.lang" ng-click="changeLang(lang)"><a tabindex="-1" href="javascript:void(0)">{{lang.label}}</a></li>
    </ul>
 </div>

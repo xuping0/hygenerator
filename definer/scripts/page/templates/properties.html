@@ -35,8 +35,8 @@
         <tr ng-show="selectedPage.header.label.enabled">
         <td valign="top"><label class="control-label" for="phdtext">Header文字:</label></td>
         <td>
-        <div><span>中文:<span><input type="text" id="phdtext" placeholder="请编写Header固定文字" ng-model="selectedPage.header.label.text.cn" ng-disabled="headerTextDisabled" required></div><br/>
-        <div><span>英文:<span><input type="text" placeholder="Please type header text" ng-model="selectedPage.header.label.text.en" ng-disabled="headerTextDisabled" required></div>
+        <div ng-show="langIsZhCn"><input type="text" id="phdtext" placeholder="请编写Header固定文字" ng-model="selectedPage.header.label.text.cn" ng-disabled="headerTextDisabled" required></div>
+        <div ng-show="langIsEn"><input type="text" placeholder="Please type header text" ng-model="selectedPage.header.label.text.en" ng-disabled="headerTextDisabled" required></div>
         </td>
         </tr>
 
@@ -51,8 +51,8 @@
         <tr ng-show="selectedPage.header.back.enabled">
         <td valign="top"><label class="control-label" for="phdtext">返回文字:</label></td>
         <td>
-        <div><span>中文:<span><input type="text" id="phdtext" placeholder="请编写返回键文字" ng-model="selectedPage.header.back.text.cn" ng-disabled="selectedPage.locked" required></div><br/>
-        <div><span>英文:<span><input type="text" placeholder="Please type back button text" ng-model="selectedPage.header.back.text.en" ng-disabled="selectedPage.locked" required></div>
+        <div ng-show="langIsZhCn"><input type="text" id="phdtext" placeholder="请编写返回键文字" ng-model="selectedPage.header.back.text.cn" ng-disabled="selectedPage.locked" required></div>
+        <div ng-show="langIsEn"><input type="text" placeholder="Please type back button text" ng-model="selectedPage.header.back.text.en" ng-disabled="selectedPage.locked" required></div>
         </td>
         </tr>
 

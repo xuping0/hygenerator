@@ -15,7 +15,7 @@ define(function(require, exports) {
         var app = {
             "name": "Application1",
             "lang": [{
-              "id": "zh-ch",
+              "id": "zh-cn",
               "label": "简体中文"
             }, {
               "id": "en",

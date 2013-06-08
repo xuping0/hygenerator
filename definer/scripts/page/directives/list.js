@@ -4,7 +4,7 @@ define(function(require, exports) {
   var template = require("../templates/list.html");
 
   angular.module('definerPageList', [])
-  .controller('PageListController', ['$scope', 'PageService', function ($scope, PageService) {
+  .controller('PageListController', ['$scope', 'PageService', 'PreviewService', function ($scope, PageService, PreviewService) {
 
     // 设置应用id
     PageService.setAppId($scope.selectedApp.id);
@@ -14,6 +14,7 @@ define(function(require, exports) {
     // 选择
     $scope.select = function(idx) {
       $scope.selectedPage = PageService.setSelected(idx);
+      PreviewService.save($scope.selectedPage);
     };
     $scope.select(0);
 
