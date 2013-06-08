@@ -6,6 +6,8 @@ define(function(require, exports) {
   angular.module('definerPageList', [])
   .controller('PageListController', ['$scope', 'PageService', function ($scope, PageService) {
 
+    // 设置应用id
+    PageService.setAppId($scope.selectedApp.id);
     // 列表初始化
     $scope.pages = PageService.list();
 

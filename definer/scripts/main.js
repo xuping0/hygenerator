@@ -1,11 +1,12 @@
 'use strict';
 define(function(require) {
   require("./common/Common");
+  require("./application/Application");
   require("./page/Page");
 
   var pageTemp = require("./page/templates/page.html");
 
-  angular.module('definerApp', ['definerCommon', 'definerPage'])
+  angular.module('definerApp', ['definerCommon', 'definerApplicationService', 'definerPage'])
   .config(['$routeProvider', function ($routeProvider) {
       $routeProvider
       .when('/pages', {
@@ -16,8 +17,7 @@ define(function(require) {
         redirectTo: '/pages'
       });
   }])
-  .run(function() {
-  });
+  .run(function() {});
 
   angular.bootstrap(document, ["definerApp"]);
 

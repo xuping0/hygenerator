@@ -3,10 +3,12 @@ define(function(require, exports) {
 
   angular.module('definerPageService', [])
   .factory("PageService", function() {
-    var pages = [], selected, selectedIdx,
+    var appId = null,
+        pages = [], selected, selectedIdx,
         util = nodejs.require("pageutil");
     return {
       create: function() {
+        if (!appId) { return; }
         var time = (new Date()).getTime();
         var page = {
             "name": null,
@@ -53,15 +55,16 @@ define(function(require, exports) {
               }
             }]
         };
-        util.write(page);
+        util.write(appId, page);
         pages.push(page);
       },
       list: function() {
+        if (!appId) { return; }
         $(pages).each(function(i, page) {
           pages.pop();
         });
 
-        util.fill(pages);
+        util.fill(appId, pages);
 
         if (pages.length == 0) {
           this.create();
@@ -72,20 +75,27 @@ define(function(require, exports) {
         return pages;
       },
       save: function(page) {
+        if (!appId) { return; }
         if (!page) { return; }
         page.modified_time = (new Date()).getTime();
-        util.write(page);
+        util.write(appId, page);
       },
       getSelected: function() {
+        if (!appId) { return; }
         return selected;
       },
       setSelected: function(idx) {
+        if (!appId) { return; }
         selectedIdx = idx;
         selected = pages[idx];
         return selected;
       },
+      setAppId: function(id) {
+        appId = id;
+      },
       remove: function(page) {
-        util.remove(page);
+        if (!appId) { return; }
+        util.remove(appId, page);
         pages.splice(selectedIdx, 1);
       }
     }

@@ -1,9 +1,11 @@
 'use strict';
 define(function(require, exports) {
 
+  require("./lang");
+
   var template = require("../templates/properties.html");
 
-  angular.module('definerPageProperties', [])
+  angular.module('definerPageProperties', ['definerPageLangSelect'])
   .controller('PagePropertiesController', ['$scope', 'PageService', function ($scope, PageService) {
     function savePage() {
       PageService.save($scope.selectedPage);
